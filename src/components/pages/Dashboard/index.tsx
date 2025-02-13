@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Group, Title, Tooltip } from '@mantine/core';
+import { ActionIcon, Anchor, Box, Code, Group, Paper, Stack, Text, Title, Tooltip } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import { showNotification } from '@mantine/notifications';
 import {
@@ -129,6 +129,31 @@ export default function Dashboard({ disableMediaPreview, exifEnabled, compress }
           otherUser={false}
         />
       )}
+
+      <Paper withBorder p='md' mb='md'>
+        <Stack spacing='md'>
+          <Title order={3}>⚠️ Important! ⚠️</Title>
+
+          <Text>
+            Zipline v4 will be released soon, and is <b>NOT</b> compatible with v3 (the current version). If
+            you are using external software to automatically update Zipline, it is <b>strongly advised</b>{' '}
+            that you stop auto-updates for the time being until v4 is released. For more information, please
+            visit{' '}
+            <Anchor target='_blank' href='https://github.com/diced/zipline/tree/v4'>
+              the <Code>v4</Code> branch
+            </Anchor>{' '}
+            on GitHub to view the progress of v4. If you have any questions, feel free to{' '}
+            <Anchor target='_blank' href='https://zipline.diced.sh/discord'>
+              join our discord
+            </Anchor>
+            .
+          </Text>
+
+          <Text>
+            If you are not the server administrator, please consider notifying them of this important message.
+          </Text>
+        </Stack>
+      </Paper>
 
       <Title>Welcome back, {user?.username}</Title>
       <MutedText size='md'>
